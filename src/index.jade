@@ -19,7 +19,10 @@ html(lang="ja")
         label(for="month").control-label 月
         input#day.day.form-control.input-lg(type="text", maxlength="2")
         label(for="day").control-label 日
-        button(type="submit").btn.btn-block.btn-primary 計算する
+        div
+          input#genjitsu.genjitsu.checkbox.input-lg(type="checkbox")
+          label(for="genjitsu").control-label 現実を見ない
+      button(type="submit").btn.btn-block.btn-primary 計算する
 
     #result.modal.fade
       .modal-dialog
@@ -31,9 +34,12 @@ html(lang="ja")
           .modal-body
             p.text-center
               span.years
-              | 歳と
-              span.months
-              | ヶ月です！
+              | 歳
+              span.genjitsu
+                | と
+                span.months
+                | ヶ月
+              | です！
           .modal-footer
             button(type="button", data-dismiss="modal").btn.btn-default Close
 

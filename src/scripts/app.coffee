@@ -23,8 +23,11 @@ $ '#birthdayForm'
   .find '.years'
   .text denomination
 
-  $result
-  .find '.months'
-  .text months - 12 * denomination
+  if ($this.find('.genjitsu').prop('checked'))
+    $result.find('.genjitsu').hide()
+  else
+    $result
+    .find '.months'
+    .text months - 12 * denomination
 
   $result.modal()
